@@ -5970,7 +5970,7 @@ MonoBehaviour:
   - {fileID: 3842673959881728541}
   - {fileID: 9052397429392452485}
   - {fileID: 6958800969592819334}
-  passage: []
+  lights: []
   RoomOffsetX: 18
   RoomOffsetY: 18
 --- !u!1 &9052397429392452485
