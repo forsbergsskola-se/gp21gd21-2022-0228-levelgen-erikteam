@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class Slot : MonoBehaviour
 {
@@ -13,5 +13,17 @@ public class Slot : MonoBehaviour
     {
         button = GetComponent<Button>();
         image = GetComponent<Image>();
+    }
+
+    public void Setup(Skill skill)
+    {
+        slotSkill = skill;
+        image.sprite = skill.icon;
+        button.onClick.AddListener(GiveBuff);
+    }
+
+    public void GiveBuff()
+    {
+        //stuff
     }
 }
