@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Experimental.TerrainAPI;
 
 public class DungeonGenerator : MonoBehaviour
@@ -14,14 +15,14 @@ public class DungeonGenerator : MonoBehaviour
 
     public Vector2 size;
     public int startPos = 0;
-    
+
     public GameObject[] room;
     public GameObject firstRoom;
     public GameObject lastRoom;
     public GameObject bonusRoom;
 
     private Color[] colors;
-    
+
     public int bonusRoomChance;
     private List<Cell> _board;
 
@@ -37,7 +38,7 @@ public class DungeonGenerator : MonoBehaviour
         {
             colors[i] = Color.Lerp(Color.green, Color.red, ((float)i/10));
         }
-        
+
         MazeGenerator();
     }
 
@@ -140,6 +141,7 @@ public class DungeonGenerator : MonoBehaviour
                 }
             }
         }
+        gameObject.GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     void MazeGenerator()
@@ -170,7 +172,7 @@ public class DungeonGenerator : MonoBehaviour
             {
                 break;
             }
-            
+
             //check the cell's neighbours
             List<int> neighbours = CheckNeighbours(currentCell);
 
@@ -231,7 +233,7 @@ public class DungeonGenerator : MonoBehaviour
     List<int> CheckNeighbours(int cell)
     {
         List<int> neighbours = new List<int>();
-        
+
         //check up neighbour
         if (cell - size.x >= 0 && !_board[Mathf.FloorToInt(cell - size.x)].Visited)
         {
