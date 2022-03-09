@@ -20,6 +20,7 @@ public class Recursive : Maze
         Generate(x + directions[1].x, z + directions[1].z);
         Generate(x + directions[2].x, z + directions[2].z);
         Generate(x + directions[3].x, z + directions[3].z);
+
     }
 
 }

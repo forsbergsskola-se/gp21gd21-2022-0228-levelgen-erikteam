@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class MapLocation       
+public class MapLocation
 {
     public int x;
     public int z;
@@ -56,6 +57,7 @@ public class Maze : MonoBehaviour
         Generate();
         AddRoom(6, 4, 6);
         DrawMap();
+        gameObject.GetComponent<NavMeshSurface>().BuildNavMesh();
     }
 
     public virtual void AddRoom(int count, int minSize , int maxSize)
@@ -347,7 +349,7 @@ public class Maze : MonoBehaviour
                     GameObject block = GameObject.CreatePrimitive(PrimitiveType.Sphere);
                     block.transform.localScale = new Vector3(scale, scale, scale);
                     block.transform.position = pos;
-                    
+
                 }
 
 
