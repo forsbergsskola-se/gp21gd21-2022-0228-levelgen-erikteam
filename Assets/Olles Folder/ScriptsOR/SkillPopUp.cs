@@ -9,5 +9,6 @@ public class SkillPopUp : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         SkillPopUpPanel.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }
