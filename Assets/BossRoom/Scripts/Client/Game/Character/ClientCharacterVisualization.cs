@@ -141,6 +141,11 @@ namespace Unity.Multiplayer.Samples.BossRoom.Visual
             }
         }
 
+        private void OnDisable()
+        {
+            throw new NotImplementedException();
+        }
+
         public override void OnDestroy()
         {
             base.OnDestroy();
@@ -240,9 +245,11 @@ namespace Unity.Multiplayer.Samples.BossRoom.Visual
         {
             if (Parent == null)
             {
-                // since we aren't in the transform hierarchy, we have to explicitly die when our parent dies.
-                Destroy(gameObject);
-                return;
+                //OnNetworkSpawn();
+                GetComponentInParent<NetworkObject>().Spawn();
+                /*  // since we aren't in the transform hierarchy, we have to explicitly die when our parent dies.
+                  Destroy(gameObject);
+                  return;*/
             }
 
             // On the host, Characters are translated via ServerCharacterMovement's FixedUpdate method. To ensure that
