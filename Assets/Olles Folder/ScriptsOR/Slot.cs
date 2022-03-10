@@ -24,6 +24,6 @@ public class Slot : MonoBehaviour
 
     public void GiveBuff()
     {
-        var giveBuff = 0;
+        
     }
 }

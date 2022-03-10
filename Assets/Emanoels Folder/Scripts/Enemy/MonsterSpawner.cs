@@ -2,24 +2,29 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Realtime;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    public GameObject[] monsterSpawner;
+    public GameObject impPrefab;
+
+    public int impSpawnMin = 1;
+    public int impSpawnMax = 5;
+
+    private bool hasSpawned = false;
 
     private void OnTriggerEnter(Collider other)
     {
-
-        Debug.Log("entered square");
-        for (int i = 0; i < monsterSpawner.Length; i++)
+        if (hasSpawned == false)
         {
-            monsterSpawner[i].gameObject.SetActive(true);
-
-            //Instantiate(monsterSpawner[i], new Vector3(10,10,10),Quaternion.identity);
-            Debug.Log("Monster Spawned");
-            this.gameObject.SetActive(false);
-            Debug.Log("Is not Inactive");
+            /*int randomSpawner = UnityEngine.Random.Range(impSpawnMin, impSpawnMax);
+            for (int i = 0; i < randomSpawner; i++)
+            {
+                Instantiate(impPrefab, new Vector3(i + transform.position.x, 0, i + transform.position.z), Quaternion.identity, transform);
+                Instantiate(impPrefab, new Vector3(i * _roomOffsetX, 0, -j * _roomOffsetY), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
+            }
+            hasSpawned = true;*/
         }
     }
 }
