@@ -1326,8 +1326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impPrefab: {fileID: 3713729372785093424, guid: 6cdd52f1fa2ed34469a487ae6477eded, type: 3}
-  impSpawnMin: 1
-  impSpawnMax: 5
+  impSpawnMin: 5
+  impSpawnMax: 10
 --- !u!65 &1906576951960650013
 BoxCollider:
   m_ObjectHideFlags: 0
