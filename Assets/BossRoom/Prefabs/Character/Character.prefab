@@ -300,5 +300,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99ddc19df9a4114f9d868f7ffce40ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterState: {fileID: 0}
   SkillPopUpPanel: {fileID: 5561986809115341782, guid: 0c27e31696f7ee7428c52d4e8718dbdc, type: 3}

@@ -19,11 +19,6 @@ public class Slot : MonoBehaviour
     {
         slotSkill = skill;
         image.sprite = skill.icon;
-        button.onClick.AddListener(GiveBuff);
-    }
-
-    public void GiveBuff()
-    {
-        
+        //button.onClick.AddListener(GiveBuff);
     }
 }
