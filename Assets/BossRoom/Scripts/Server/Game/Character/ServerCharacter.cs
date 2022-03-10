@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Unity.Multiplayer.Samples.BossRoom.Server
 {
@@ -8,6 +9,8 @@ namespace Unity.Multiplayer.Samples.BossRoom.Server
     {
         [SerializeField]
         NetworkCharacterState m_NetworkCharacterState;
+
+        public UnityEvent testEvent;
 
         public NetworkCharacterState NetState => m_NetworkCharacterState;
 
@@ -226,6 +229,7 @@ namespace Unity.Multiplayer.Samples.BossRoom.Server
                     }
 
                     NetState.LifeState = LifeState.Dead;
+                    testEvent.Invoke();
                 }
                 else
                 {

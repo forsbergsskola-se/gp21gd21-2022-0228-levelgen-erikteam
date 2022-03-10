@@ -12,7 +12,6 @@ public class SkillPopUp : MonoBehaviour
 
     private void Update()
     {
-       // OnLifeStateChanged();
         TriggerSkillPopUp();
     }
 
@@ -21,18 +20,16 @@ public class SkillPopUp : MonoBehaviour
         score = 0;
     }
 
-    private void OnLifeStateChanged(LifeState lifeState)
+    public void EnemyKilled()
     {
-        if (lifeState != LifeState.Alive)
-        {
-            score++;
-          //  TriggerSkillPopUp();
-        }
+        score++;
+        TriggerSkillPopUp();
+
     }
 
     public void TriggerSkillPopUp()
     {
-        if(score == 20)
+        if(score == 1)
         {
             SkillPopUpPanel.SetActive(true);
             score = 0;
