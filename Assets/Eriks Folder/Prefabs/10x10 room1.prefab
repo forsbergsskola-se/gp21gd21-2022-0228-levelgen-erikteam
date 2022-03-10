@@ -425,8 +425,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5689030938265038934}
-  - component: {fileID: 7549087390911213617}
   - component: {fileID: 992566396526548150}
+  - component: {fileID: 7549087390911213617}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -441,13 +441,26 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4351989026352314575}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0.5, z: -2.6499996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.8182687, y: 0, z: -2.9509115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7323266361297341351}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &992566396526548150
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351989026352314575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 33, y: 1, z: 33}
+  m_Center: {x: -0.018267632, y: 0, z: 0.80091095}
 --- !u!114 &7549087390911213617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,19 +476,6 @@ MonoBehaviour:
   impPrefab: {fileID: 3713729372785093424, guid: 6cdd52f1fa2ed34469a487ae6477eded, type: 3}
   impSpawnMin: 1
   impSpawnMax: 5
---- !u!65 &992566396526548150
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4351989026352314575}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 33.87906, y: 1, z: 34.7377}
-  m_Center: {x: -0.018267632, y: 0, z: 0.80091095}
 --- !u!1 &4538156612822583865
 GameObject:
   m_ObjectHideFlags: 0

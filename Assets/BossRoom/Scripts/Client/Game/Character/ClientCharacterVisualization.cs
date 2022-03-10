@@ -143,7 +143,7 @@ namespace Unity.Multiplayer.Samples.BossRoom.Visual
 
         private void OnDisable()
         {
-            throw new NotImplementedException();
+
         }
 
         public override void OnDestroy()
