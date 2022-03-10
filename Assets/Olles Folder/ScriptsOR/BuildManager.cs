@@ -27,4 +27,8 @@ public class BuildManager : MonoBehaviour
             slot.GetComponent<Slot>().Setup(listSkill[Random.Range(0, listSkill.Length)]);
         }
     }
+    public void GiveBuff()
+    {
+        //insertbuffcrap
+    }
 }

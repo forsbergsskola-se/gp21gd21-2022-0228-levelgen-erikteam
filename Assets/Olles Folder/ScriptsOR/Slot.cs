@@ -8,6 +8,7 @@ public class Slot : MonoBehaviour
     private Skill slotSkill;
     private Button button;
     public Image image;
+    private BuildManager buff;
 
     private void Awake()
     {
@@ -19,6 +20,6 @@ public class Slot : MonoBehaviour
     {
         slotSkill = skill;
         image.sprite = skill.icon;
-        //button.onClick.AddListener(GiveBuff);
+        button.onClick.AddListener(buff.GiveBuff);
     }
 }
