@@ -16,10 +16,13 @@ public class Slot : MonoBehaviour
         image = GetComponent<Image>();
     }
 
-    public void Setup(Skill skill)
+    public void Setup(Skill skill, BuildManager buildManager)
     {
+
+        buff = buildManager;
         slotSkill = skill;
         image.sprite = skill.icon;
-        button.onClick.AddListener(buff.GiveBuff);
-    }
+        button.onClick.AddListener(delegate { buff.GiveBuff(slotSkill);
+    });
+}
 }

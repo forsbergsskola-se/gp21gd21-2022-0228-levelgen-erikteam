@@ -12,7 +12,7 @@ public class SkillPopUp : MonoBehaviour
 
     private void Update()
     {
-        //OnLifeStateChanged();
+       // OnLifeStateChanged();
         TriggerSkillPopUp();
     }
 
@@ -26,6 +26,7 @@ public class SkillPopUp : MonoBehaviour
         if (lifeState != LifeState.Alive)
         {
             score++;
+          //  TriggerSkillPopUp();
         }
     }
 

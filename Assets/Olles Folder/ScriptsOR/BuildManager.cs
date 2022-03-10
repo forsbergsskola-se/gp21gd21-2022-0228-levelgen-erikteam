@@ -12,23 +12,36 @@ public class BuildManager : MonoBehaviour
 {
     public Skill[] listSkill; //in inspector set the skills
     public GameObject Slot; //set prefab here
-    public Transform slotsContent; //set the parent transform of the stuff
+    public Transform slotsContent1;
+    public Transform slotsContent2; //set the parent transform of the stuff
     public Action.BuffableValue[] buffables;
-    //public ActionLogic[] actionLogic;
+    public ActionLogic[] actionLogic;
     public MovementStatus[] movementStatus;
 
-    public int numberOfTiles;
+    public int numberOfTiles = 2;
     void Start()
     {
         for (int i = 0; i < numberOfTiles; i++)
         {
-            GameObject slot = Instantiate(Slot, slotsContent.position, Quaternion.identity);
-            slot.transform.SetParent(slotsContent);
-            slot.GetComponent<Slot>().Setup(listSkill[Random.Range(0, listSkill.Length)]);
+            Transform parentSkill;
+            if (i == 0)
+                parentSkill = slotsContent1;
+            else
+                parentSkill = slotsContent2;
+            GameObject slot = Instantiate(Slot);
+            slot.transform.SetParent(parentSkill, false);
+            slot.transform.localPosition = Vector3.zero;
+            slot.GetComponent<Slot>().Setup(listSkill[Random.Range(0, listSkill.Length)], this);
         }
     }
-    public void GiveBuff()
+    public void GiveBuff(Skill skill)
     {
-        //insertbuffcrap
+        Debug.Log("Hey, Listen!");
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        CharacterClassContainer classContainer = player.GetComponent<CharacterClassContainer>();
+        CharacterClass _class = classContainer.CharacterClass;
+        //ScriptableObject.CreateInstance<CharacterClass>(_class)
+        _class.BaseHP = new IntVariable(){Value = _class.BaseHP.Value + 50};
+        classContainer.SetCharacterClass(_class);
     }
 }
