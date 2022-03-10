@@ -18,6 +18,7 @@ public class SkillPopUp : MonoBehaviour
     private void Awake()
     {
         score = 0;
+        SkillPopUpPanel.SetActive(true);
     }
 
     public void EnemyKilled()
