@@ -17,13 +17,15 @@ public class DungeonGenerator : MonoBehaviour
     public int startPos = 0;
 
     public GameObject[] room;
-    public GameObject firstRoom;
+    public GameObject startRoom;
     public GameObject lastRoom;
     public GameObject bonusRoom;
+    public int bonusRoomChance;
+    public GameObject bossRoom;
+    public int bossRoomChance;
 
     private Color[] colors;
 
-    public int bonusRoomChance;
     private List<Cell> _board;
 
     private float _roomOffsetX;
@@ -54,22 +56,22 @@ public class DungeonGenerator : MonoBehaviour
                 {
                     if (i == 0 && j == 0)
                     {
-                        _roomOffsetX = firstRoom.GetComponent<RoomBehaviour>().RoomOffsetX;
-                        _roomOffsetY = firstRoom.GetComponent<RoomBehaviour>().RoomOffsetY;
-                        if (firstRoom.GetComponent<RoomBehaviour>().lights.Length != 0)
+                        _roomOffsetX = startRoom.GetComponent<RoomBehaviour>().RoomOffsetX;
+                        _roomOffsetY = startRoom.GetComponent<RoomBehaviour>().RoomOffsetY;
+                        if (startRoom.GetComponent<RoomBehaviour>().lights.Length != 0)
                         {
-                            for (int k = 0; k < firstRoom.GetComponent<RoomBehaviour>().lights.Length; k++)
+                            for (int k = 0; k < startRoom.GetComponent<RoomBehaviour>().lights.Length; k++)
                             {
                                 for (int l = 0; l < ((size.x + size.y) - 2); l++)
                                 {
                                     if (i + j == l)
                                     {
-                                        firstRoom.GetComponent<RoomBehaviour>().lights[k].GetComponent<Light>().color = colors[l];
+                                        startRoom.GetComponent<RoomBehaviour>().lights[k].GetComponent<Light>().color = colors[l];
                                     }
                                 }
                             }
                         }
-                        var newRoom = Instantiate(firstRoom, new Vector3(i * _roomOffsetX, 0, -j * _roomOffsetY), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
+                        var newRoom = Instantiate(startRoom, new Vector3(i * _roomOffsetX, 0, -j * _roomOffsetY), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
                         newRoom.UpdateRoom(currentCell.Status);
                         newRoom.name += "First Room " + i + "-" + j;
                     }
@@ -77,7 +79,7 @@ public class DungeonGenerator : MonoBehaviour
                     {
                         _roomOffsetX = lastRoom.GetComponent<RoomBehaviour>().RoomOffsetX;
                         _roomOffsetY = lastRoom.GetComponent<RoomBehaviour>().RoomOffsetY;
-                        if (firstRoom.GetComponent<RoomBehaviour>().lights.Length != 0)
+                        if (lastRoom.GetComponent<RoomBehaviour>().lights.Length != 0)
                         {
                             for (int k = 0; k < lastRoom.GetComponent<RoomBehaviour>().lights.Length; k++)
                             {
@@ -98,8 +100,7 @@ public class DungeonGenerator : MonoBehaviour
                     {
                         _roomOffsetX = bonusRoom.GetComponent<RoomBehaviour>().RoomOffsetX;
                         _roomOffsetY = bonusRoom.GetComponent<RoomBehaviour>().RoomOffsetY;
-                        var newRoom = Instantiate(bonusRoom, new Vector3(i * _roomOffsetX, 0, -j * _roomOffsetY), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
-                        if (firstRoom.GetComponent<RoomBehaviour>().lights.Length != 0)
+                        if (bonusRoom.GetComponent<RoomBehaviour>().lights.Length != 0)
                         {
                             for (int k = 0; k < bonusRoom.GetComponent<RoomBehaviour>().lights.Length; k++)
                             {
@@ -112,6 +113,7 @@ public class DungeonGenerator : MonoBehaviour
                                 }
                             }
                         }
+                        var newRoom = Instantiate(bonusRoom, new Vector3(i * _roomOffsetX, 0, -j * _roomOffsetY), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
                         newRoom.UpdateRoom(currentCell.Status);
                         randomBonusNumber = bonusRoomChance + 100;
                         newRoom.name += "Bonus Room " + i + "-" + j;
@@ -121,7 +123,7 @@ public class DungeonGenerator : MonoBehaviour
                         int randomNumberRoom = Random.Range(0, room.Length);
                         _roomOffsetX = room[randomNumberRoom].GetComponent<RoomBehaviour>().RoomOffsetX;
                         _roomOffsetY = room[randomNumberRoom].GetComponent<RoomBehaviour>().RoomOffsetY;
-                        if (firstRoom.GetComponent<RoomBehaviour>().lights.Length != 0)
+                        if (room[randomNumberRoom].GetComponent<RoomBehaviour>().lights.Length != 0)
                         {
                             for (int k = 0; k < room[randomNumberRoom].GetComponent<RoomBehaviour>().lights.Length; k++)
                             {
