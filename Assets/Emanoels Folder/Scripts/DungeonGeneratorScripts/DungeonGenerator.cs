@@ -30,6 +30,8 @@ public class DungeonGenerator : MonoBehaviour
 
     private float _roomOffsetX;
     private float _roomOffsetY;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +44,11 @@ public class DungeonGenerator : MonoBehaviour
         }
 
         MazeGenerator();
+
+        for (int i = 1; i < _board.Count; i++)
+        {
+            this.transform.GetChild(i).gameObject.SetActive(false);
+        }
     }
 
     void GenerateDungeon()
