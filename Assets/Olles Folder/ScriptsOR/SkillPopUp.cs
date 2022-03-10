@@ -7,32 +7,34 @@ using UnityEngine;
 
 public class SkillPopUp : MonoBehaviour
 {
-    public ServerCharacter characterState;
     public GameObject SkillPopUpPanel;
     private int score = 0;
 
+    private void Update()
+    {
+        //OnLifeStateChanged();
+        TriggerSkillPopUp();
+    }
 
     private void Awake()
     {
-        //score = 0;
+        score = 0;
     }
 
-    private void OnLifeStateChanged(LifeState prevLifeState, LifeState lifeState)
+    private void OnLifeStateChanged(LifeState lifeState)
     {
         if (lifeState != LifeState.Alive)
         {
-          //  score++;
+            score++;
         }
     }
 
     public void TriggerSkillPopUp()
     {
-        for (int score = 0; score < score; score++)
+        if(score == 20)
         {
-            if ((score % 20) == 0)
-            {
-
-            }
+            SkillPopUpPanel.SetActive(true);
+            score = 0;
         }
     }
 }

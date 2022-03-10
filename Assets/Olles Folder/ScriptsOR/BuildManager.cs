@@ -19,7 +19,7 @@ public class BuildManager : MonoBehaviour
         {
             GameObject slot = Instantiate(Slot, slotsContent.position, Quaternion.identity);
             slot.transform.SetParent(slotsContent);
-            slot.GetComponent<Slot>().Setup(listSkill[Random.Range(0, listSkill.Length)]);
+           // slot.GetComponent<Slot>().Setup(listSkill[Random.Range(0, listSkill.Length)]);
         }
     }
 

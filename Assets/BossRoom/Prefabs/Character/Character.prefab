@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 4309865414312164521}
   - component: {fileID: 753347877357705413}
   - component: {fileID: 7495268952650712827}
+  - component: {fileID: -4541475443519627884}
   m_Layer: 3
   m_Name: Character
   m_TagString: Player
@@ -287,3 +288,17 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   CanCommitToTransform: 0
+--- !u!114 &-4541475443519627884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4600110157238723781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99ddc19df9a4114f9d868f7ffce40ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterState: {fileID: 0}
+  SkillPopUpPanel: {fileID: 5561986809115341782, guid: 0c27e31696f7ee7428c52d4e8718dbdc, type: 3}
