@@ -633,7 +633,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413301242091686620}
   m_LocalRotation: {x: -0.0000000038755323, y: 0.28403464, z: -0.00000009002996, w: 0.958814}
-  m_LocalPosition: {x: 0.07900724, y: 0.07, z: 0.16264302}
+  m_LocalPosition: {x: -0.69, y: 0.07, z: -0.34}
   m_LocalScale: {x: 0.38172, y: 0.38172, z: 0.38172}
   m_Children: []
   m_Father: {fileID: 3297718483192739931}
@@ -697,7 +697,7 @@ BoxCollider:
   m_GameObject: {fileID: 1413301242091686620}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 4.0000005, y: 1, z: 4.000001}
   m_Center: {x: 1.9999998, y: -0.5, z: -2.0000005}
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 1903899939033741310}
   - component: {fileID: 4434063907869328180}
   - component: {fileID: 1142885341261130238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: T_Junct
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -904,7 +904,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2776479966165017313}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

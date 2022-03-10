@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1890627801511827844}
   - component: {fileID: 4456361025931308366}
   - component: {fileID: 3035890082563361619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2799216752450882715}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -768,7 +768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.4371794
+      value: 1.4541383
       objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_LocalScale.y
@@ -776,7 +776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.5084455
+      value: 1.5200605
       objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_LocalPosition.x
@@ -788,7 +788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.0166
+      value: 3.0628
       objectReference: {fileID: 0}
     - target: {fileID: 3325143161705299546, guid: 2aa4510a758056646b97aa382d0d4583, type: 3}
       propertyPath: m_LocalRotation.w
