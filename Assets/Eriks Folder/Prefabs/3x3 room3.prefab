@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 2368987851858699890}
   m_Layer: 0
   m_Name: 3x3 room3
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

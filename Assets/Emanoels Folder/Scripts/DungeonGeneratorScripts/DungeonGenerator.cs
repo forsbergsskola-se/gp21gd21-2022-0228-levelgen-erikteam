@@ -26,7 +26,7 @@ public class DungeonGenerator : MonoBehaviour
     public int bossRoomChance;
 
     private Color[] colors;
-
+    public int count;
     [HideInInspector]
     public List<Cell> _board;
 
@@ -49,7 +49,11 @@ public class DungeonGenerator : MonoBehaviour
 
         for (int i = 1; i < _board.Count; i++)
         {
-            this.transform.GetChild(i).gameObject.SetActive(false);
+            count = this.transform.GetChild(i).childCount;
+            for (int j = 0; j < count; j++)
+            {
+                this.transform.GetChild(i).transform.GetChild(j).gameObject.SetActive(false);
+            }
         }
     }
 
@@ -82,7 +86,7 @@ public class DungeonGenerator : MonoBehaviour
                         }
                         var newRoom = Instantiate(startRoom, new Vector3(i * _roomOffsetX, 0, -j * _roomOffsetY), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
                         newRoom.UpdateRoom(currentCell.Status);
-                        newRoom.name += "First Room " + i + "-" + j;
+                        newRoom.name = "Room " + i + "-" + j;
                     }
                     else if (i == size.x - 1 && j == size.y - 1)
                     {
@@ -103,7 +107,7 @@ public class DungeonGenerator : MonoBehaviour
                         }
                         var newRoom = Instantiate(lastRoom, new Vector3(i * _roomOffsetX, 0, -j * _roomOffsetY), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
                         newRoom.UpdateRoom(currentCell.Status);
-                        newRoom.name += "Last Room " + i + "-" + j;
+                        newRoom.name = "Room " + i + "-" + j;
                     }
                     else if (i != 0 && j != 0 && i != size.x - 1 && j != size.y - 1 && randomBonusNumber < bonusRoomChance)
                     {
@@ -125,7 +129,7 @@ public class DungeonGenerator : MonoBehaviour
                         var newRoom = Instantiate(bonusRoom, new Vector3(i * _roomOffsetX, 0, -j * _roomOffsetY), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
                         newRoom.UpdateRoom(currentCell.Status);
                         randomBonusNumber = bonusRoomChance + 100;
-                        newRoom.name += "Bonus Room " + i + "-" + j;
+                        newRoom.name = "Room " + i + "-" + j;
                     }
                     else
                     {
@@ -147,7 +151,7 @@ public class DungeonGenerator : MonoBehaviour
                         }
                         var newRoom = Instantiate(room[randomNumberRoom], new Vector3(i * _roomOffsetX, 0, -j * _roomOffsetY), Quaternion.identity, transform).GetComponent<RoomBehaviour>();
                         newRoom.UpdateRoom(currentCell.Status);
-                        newRoom.name += " " + i + "-" + j;
+                        newRoom.name = "Room " + i + "-" + j;
                     }
                 }
             }
