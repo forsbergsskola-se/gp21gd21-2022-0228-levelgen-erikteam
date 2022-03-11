@@ -9,6 +9,7 @@ public class DungeonGenerator : MonoBehaviour
 {
     public class Cell
     {
+        public string id;
         public bool Visited = false;
         public readonly bool[] Status = new bool[4];
     }
@@ -26,7 +27,8 @@ public class DungeonGenerator : MonoBehaviour
 
     private Color[] colors;
 
-    private List<Cell> _board;
+    [HideInInspector]
+    public List<Cell> _board;
 
     private float _roomOffsetX;
     private float _roomOffsetY;
@@ -161,6 +163,8 @@ public class DungeonGenerator : MonoBehaviour
         {
             for (int j = 0; j < size.y; j++)
             {
+                Cell newGeneratedCell = new Cell();
+                newGeneratedCell.id = i + "-" + j;
                 _board.Add(new Cell());
             }
         }
@@ -239,7 +243,7 @@ public class DungeonGenerator : MonoBehaviour
         GenerateDungeon();
     }
 
-    List<int> CheckNeighbours(int cell)
+    public List<int> CheckNeighbours(int cell)
     {
         List<int> neighbours = new List<int>();
 
