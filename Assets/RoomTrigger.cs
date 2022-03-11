@@ -39,11 +39,7 @@ public class RoomTrigger : MonoBehaviour
             }
 
             var room2 = GameObject.FindGameObjectWithTag("Room"); // Room 0-0
-            var testroom = room2; //Room 0-0
             string room3 = room2.name.Replace(room2.name, "Room " + currentCellx.ToString() + "-" + currentCellz.ToString()); // Room 0-1
-
-            var room4 = testroom.name.Replace("Room", "");
-            string[] subs = room4.Split('-');
 
             var number = GameObject.Find(room3).transform.childCount;
             for (int i = 0; i < number; i++)
